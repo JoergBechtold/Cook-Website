@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+}
+.main-container {
+  height: 78.2vh;
+  background-image: url('../img/mail\ gesendet.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: 50%;
+  /* background-position-x: 50%; */
+}
+
+@media (max-width: 970px) {
+  .main-container {
+    height: 81.5vh;
+  }
+}
+
+@media (max-width: 865px) {
+  .main-container {
+    background-size: 130%;
+    background-position-y: 50%;
+    background-position-x: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    height: calc(100vh - 270px);
+  }
+}
+
+@media (max-width: 715px) {
+  .main-container {
+    background-size: 150%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    background-size: 170%;
+  }
+}
+
+@media (max-width: 520px) {
+  .main-container {
+    background-size: 175%;
+    background-position-y: 55%;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-container {
+    background-size: 185%;
+  }
+}
+
+@media (max-width: 345px) {
+  .main-container {
+    background-size: 190%;
+    background-position-y: 100%;
+  }
+}

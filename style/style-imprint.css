@@ -1,0 +1,23 @@
+body {
+  background-color: var(--lightGray);
+}
+p {
+  font-size: 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+}
+
+.impressum {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 400px) {
+  .impressum p {
+    font-size: 22px;
+  }
+}

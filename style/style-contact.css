@@ -1,0 +1,261 @@
+/* css für Kontakt Seite */
+
+.location-section {
+  gap: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-section h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.location-section p {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.location-section a {
+  text-decoration: none;
+  color: var(--green);
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
+}
+
+.main-container-contact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lightGray);
+  height: 78.2vh;
+}
+
+.section-style-message,
+.section-style-location {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.content-section {
+  display: flex;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  align-items: center;
+  width: 100%;
+}
+
+.seperator {
+  background-color: var(--gray);
+  width: 1px;
+  height: 530px;
+}
+
+.section-style-message {
+  width: 70%;
+  display: flex;
+  justify-content: right;
+}
+.message-section {
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-section p {
+  margin-top: 0px;
+  cursor: default;
+  font-size: 20px;
+}
+
+.input-group {
+  width: 100%;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.label {
+  cursor: text;
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  transition: all 0.125s;
+  padding: 0 2px;
+  color: var(--black);
+  font-size: 28px;
+}
+
+.label::before {
+  content: '';
+  height: 5px;
+  background-color: var(--white);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  z-index: -1;
+}
+
+.text-input {
+  padding: 14px;
+  width: -webkit-fill-available;
+  height: 100%;
+  border: 1px solid var(--black);
+  background: white;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  transition: all var(--animation-time);
+  color: var(--black);
+}
+
+/* .email-text-input:invalid + label {
+  z-index: 1;
+  top: -10px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: bold;
+} */
+
+.text-input:focus {
+  border: 2px solid var(--green);
+}
+
+.text-input:focus + label,
+.text-input:valid + label {
+  z-index: 1;
+  top: -10px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.text-input::placeholder {
+  font-size: 16px;
+  opacity: 0;
+  transition: all var(--animation-time);
+}
+.text-input:focus::placeholder {
+  opacity: 1;
+  animation-delay: var(--animation-time);
+}
+
+/* Responsive Contact */
+
+@media (max-width: 1080px) {
+  .content-section {
+    flex-direction: column-reverse;
+  }
+
+  .section-style-message {
+    width: 85%;
+  }
+  form {
+    margin-bottom: 7px;
+  }
+
+  .main-container-contact {
+    height: unset;
+  }
+
+  .seperator {
+    background-color: var(--gray);
+    width: 85%;
+    height: 1px;
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+  }
+
+  .section-style {
+    width: 100%;
+    height: 50%;
+  }
+
+  .location-section,
+  .message-section {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .location-section iframe {
+    width: 100%;
+  }
+
+  .location-section {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 370px) {
+  .content-section {
+    width: 85%;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .location-section p {
+    font-size: 16px;
+  }
+
+  .location-section iframe {
+    width: 85%;
+  }
+}
+
+@media (max-width: 365px) {
+  .content-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 345px) {
+  .main-container-contact {
+    width: 96%;
+  }
+}
+
+@media (max-width: 340px) {
+  .main-container-contact {
+    width: 94%;
+  }
+}
+
+@media (max-width: 335px) {
+  .main-container-contact {
+    width: 92%;
+  }
+}
+
+@media (max-width: 330px) {
+  .main-container-contact {
+    width: 90%;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-container-contact {
+    width: 89%;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kochwelt Neu 17.01.2024</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/icons/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/style-index.css" />
+    <link rel="stylesheet" href="style/style-header.css" />
+    <link rel="stylesheet" href="style/style-footer.css" />
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6963f698-03d1-49c4-a4e3-494fa8c2a737" type="text/javascript"></script>
+    <script src="script/templates.js"></script>
+    <script src="script/script-index.js"></script>
+    <script src="script/script-header.js"></script>
+  </head>
+
+  <body onload="includeHTML()">
+    <div class="layout">
+      <!-- Header -->
+      <section>
+        <div w3-include-html="templates/header.html"></div>
+      </section>
+
+      <main class="main-container">
+        <!-- Rezept des Tages -->
+        <section class="recipeDay margin-left margin-right">
+          <img src="img/chili-con-carne.jpg" alt="" />
+
+          <div class="recipeDay-content">
+            <h1>Chilli con Carne</h1>
+            <p>
+              Wenn du auf der Suche nach einem einfachen und absolut köstlichen Gericht bist, dann ist dieses Chili con Carne genau das richtige
+              Rezept für dich. Perfekt als Familienessen oder auch die nächste Party.
+            </p>
+
+            <a href="recipe-of-the-day.html"><button class="btn">Rezept öffnen</button></a>
+          </div>
+        </section>
+
+        <!-- Verschiedene Rezepte -->
+        <section class="new-recipes-content">
+          <h2 class="margin-left margin-right">Lust auf was Neues?</h2>
+          <div class="different-recipes-content-links margin-right margin-left">
+            <div class="recipe">
+              <a href="recipe-Hühnerfrikasse.html"><img class="picture-size" src="img/huehnerfrikassee.jpg" alt="Hühnerfrikasse" /></a>
+              <p>Hühnerfrikasse</p>
+            </div>
+            <div class="recipe">
+              <a href="recipe-Käsespätzle-Gratin.html"><img class="picture-size" src="img/kaes-spaetzle-gratin.jpg" alt="Käsespätzle Gratin" /></a>
+              <p>Käsespätzle Gratin</p>
+            </div>
+            <div class="recipe">
+              <a href="recipe-Scharfe-Maultaschen-auf-asiatische-Art.html"
+                ><img class="picture-size" src="img/scharfe-maultaschen-auf-asiatische-art.jpg" alt="Scharfe Maultaschen auf asiatische Art"
+              /></a>
+              <p>Scharfe Maultaschen auf asiatische Art</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Koch tipps -->
+        <section class="cooking-tips-container margin-left margin-right">
+          <h3>Fleischkunde-Special Cuts</h3>
+
+          <div class="cooking-tips-content">
+            <a href="recipe-tipps.html"><img class="cooking-tips-content-img" src="img/steak-bild.jpg" alt="steak-bild" /></a>
+            <p>
+              Unter Special Cuts oder Second Cuts verstehen wir spezielle Schnitte, welche von den heute üblichen Schnitten abweichen. Sie stammen aus
+              Teilen vom Tier, die wir eher schmoren oder als Braten zubereiten. Special Cuts sind oftmals eine günstigere und nachhaltige Alternative
+              zu Edelstücken. <a href="recipe-tipps.html"><br />Zur Fleischkunde--></a>
+            </p>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <section>
+        <div w3-include-html="templates/footer.html"></div>
+      </section>
+    </div>
+  </body>
+</html>

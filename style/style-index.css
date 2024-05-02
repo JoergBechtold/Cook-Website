@@ -1,0 +1,444 @@
+body,
+html {
+  font-family: 'Raleway';
+  margin: 0;
+  scroll-behavior: smooth;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  scroll-padding-top: 135px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+:root {
+  /* Farben für einzelne Elemente */
+  --black: #000000;
+  --white: #ffffff;
+  --lightGreen: #448344;
+  --green: #008000;
+  --gray: #a19999;
+  --darkGray: #403b3b;
+  --lightGray: #efefef;
+  --red: #ff0000;
+
+  /* Für alle Animationen */
+  --animation-time: 0.125s;
+
+  /* Für Margin Bottom und Top */
+  --margin-top: 32px;
+  --margin-bottom: 32px;
+
+  /* Schatten für alle Bilder */
+  --box-shadow: 0 2px 10px 0 rgb(0, 0, 0, 1.2);
+}
+
+/* Für alle Button */
+.btn {
+  cursor: pointer;
+  background-color: var(--green);
+  color: var(--white);
+  border-style: none;
+  font-size: 24px;
+  height: 50px;
+  width: 200px;
+}
+.btn:hover {
+  background-color: var(--lightGreen);
+}
+
+/* Für alle Icon button */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid var(--black);
+  background-color: var(--lightGray);
+}
+
+hr {
+  margin-top: var(--margin-top);
+  margin-bottom: var(--margin-bottom);
+}
+
+.icon-btn img {
+  width: 35px;
+  height: 35px;
+}
+
+.icon-btn:hover {
+  background-color: var(--gray);
+}
+
+/* Für alle Rezept bilder im index */
+.picture-size {
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.picture-size:hover {
+  transform: scale(1.03);
+  transition: transform var(--animation-time) ease-in-out;
+}
+
+/* Für alle Bilder im Rezept */
+.picture-size-recept {
+  box-shadow: var(--box-shadow);
+  margin-top: var(--margin-top);
+  margin-bottom: var(--margin-bottom);
+  aspect-ratio: 2 / 1;
+  width: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.margin-left {
+  margin-left: 12%;
+}
+
+.margin-right {
+  margin-right: 12%;
+}
+
+h1 {
+  font-size: 44px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2,
+h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+  margin-top: var(--margin-top);
+  margin-bottom: var(--margin-bottom);
+}
+
+.layout {
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+}
+
+.recipeDay {
+  gap: 40px;
+  padding-top: 50px;
+  display: flex;
+  padding-bottom: 50px;
+}
+.recipeDay img {
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+  border-radius: 12px;
+  aspect-ratio: 2 / 1;
+  width: 50%;
+  height: 100%px;
+}
+
+.recipeDay-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.different-recipes {
+  background-color: var(--lightGray);
+}
+
+.new-recipes-content {
+  background-color: var(--lightGray);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+.recipeDay-content a {
+  margin-top: 86px;
+}
+
+.different-recipes-content-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.different-recipes-content-links p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recipe {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cooking-tips-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 94px;
+}
+
+.cooking-tips-content {
+  gap: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.cooking-tips-content-img {
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  height: 100%;
+  aspect-ratio: 2/1;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cooking-tips-content-img:hover {
+  transform: scale(1.03);
+  transition: transform var(--animation-time) ease-in-out;
+}
+
+.cooking-tips-content,
+.recipeDay-content p {
+  font-size: 20px;
+}
+
+.cooking-tips-content a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--green);
+}
+
+/* Responsive */
+@media (max-width: 1145px) {
+  .recipeDay-content a {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 970px) {
+  .recipeDay {
+    padding-top: 50px;
+  }
+
+  html {
+    scroll-padding-top: 105px;
+  }
+}
+
+@media (max-width: 915px) {
+  .recipeDay {
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .recipeDay-content {
+    align-items: center;
+    width: 100%;
+  }
+
+  .recipeDay img,
+  .cooking-tips-content-img {
+    /* width: 100%; */
+    aspect-ratio: 1 / 1;
+    width: 260px;
+  }
+  /* .cooking-tips-content-img {
+    width: 100%;
+    aspect-ratio: 2/1;
+  } */
+
+  .recipeDay-content a {
+    margin-top: 10px;
+  }
+
+  .new-recipes-content {
+    padding-bottom: 20px;
+  }
+
+  .cooking-tips-container {
+    padding-bottom: 40px;
+  }
+
+  .cooking-tips-content {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+
+  .recipeDay {
+    text-align: center;
+  }
+}
+
+@media (max-width: 810px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 35px;
+  }
+
+  .recipeDay-content,
+  .cooking-tips-content p {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 20px;
+    height: 45px;
+    width: 195px;
+  }
+  .new-recipes-content {
+    padding-bottom: 30px;
+  }
+
+  .cooking-tips-container {
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 670px) {
+  /* .picture-size-recept {
+    width: 100%;
+  } */
+
+  .picture-size-recept {
+    aspect-ratio: 1 / 1;
+    width: 245px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 30px;
+  }
+
+  .recipeDay-content p {
+    font-size: 17px;
+  }
+
+  .cooking-tips-content p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 525px) {
+  .different-recipes-content-links {
+    flex-direction: column;
+  }
+
+  .different-recipes-content-links p {
+    text-align: center;
+  }
+
+  .recipe {
+    width: 100%;
+  }
+
+  .recipe a {
+    width: 60%;
+  }
+}
+
+@media (max-width: 450px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 27px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .btn {
+    width: 160px;
+  }
+}
+
+/* Fonts für die ganze Seite */
+/* raleway-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../download/Web-Fonts/raleway-v29-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../download/Web-Fonts/raleway-v29-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../download/Web-Fonts/raleway-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../download/Web-Fonts/raleway-v29-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../download/Web-Fonts/raleway-v29-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../download/Web-Fonts/raleway-v29-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../download/Web-Fonts/raleway-v29-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

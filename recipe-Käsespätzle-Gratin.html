@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Käsespätzle Gratin</title>
+
+    <script src="script/templates.js"></script>
+    <script src="script/script-Käsespätzle-Gratin.js"></script>
+    <script src="script/script-header.js"></script>
+
+    <link rel="icon" href="img/icons/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/style-Käsespätzle-Gratin.css" />
+    <link rel="stylesheet" href="style/style-index.css" />
+    <link rel="stylesheet" href="style/style-header.css" />
+    <link rel="stylesheet" href="style/style-footer.css" />
+  </head>
+
+  <body id="body" onload="includeHTML(); calculateAmountList(); calculateNutritionList()">
+    <div class="layout">
+      <!-- Header -->
+      <section>
+        <div w3-include-html="templates/header.html"></div>
+      </section>
+
+      <main id="main-top" class="main-container margin-right margin-left">
+        <section class="head-section-recipe">
+          <h1>Käsespätzle Gratin</h1>
+          <img src="img/kaes-spaetzle-gratin.jpg" class="picture-size-recept" alt="Käsespätzle Gratin" />
+
+          <div class="icon-bar1">
+            <div>
+              <a href=""
+                ><button onclick="printBtn()" class="icon-btn btn-print"><img src="img/icons/print.png" /></button
+              ></a>
+            </div>
+
+            <!-- Button zum Teilen-Vorlage -->
+            <!-- <div>
+            <a href="index.html"
+              ><button class="icon-btn"><img src="img/icons/share-social-interface-button_icon-icons.com_73164.png" /></button
+            ></a>
+           </div> -->
+
+            <div>
+              <a href="#nutrition-section"
+                ><button class="icon-btn"><img src="img/icons/kcal-icon-17.jpg" /></button
+              ></a>
+            </div>
+          </div>
+
+          <div class="time-difficulty-date-content">
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/clock-regular.svg" alt="icon-uhr" />
+              <span>1Std.</span>
+            </div>
+
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/brain-solid.svg" alt="Schwierigkeit" />
+              <span>Einfach</span>
+            </div>
+
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/calendar-alt-regular.svg" alt="Datum" />
+              <span>19.02.2024</span>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <section id="portions-list" class="portions-list-mobile-view hide-mobile">
+          <div class="portions-calculater">
+            <h3>Zutaten für</h3>
+            <form onsubmit="return false">
+              <!-- <label for="input">Zutaten für</label> -->
+              <input id="input" type="number" onClick="this.select();" min="1" max="10" value="3" required step="1" /><button
+                onclick="calculateAmountList()"
+                class="btn"
+              >
+                Portion(en)
+              </button>
+            </form>
+            <div onclick="CloseBtnPortionsList()" class="close-btn show-mobile">
+              <span class="close-bar"></span>
+              <span class="close-bar"></span>
+            </div>
+          </div>
+
+          <div class="amount-list">
+            <ul id="output"></ul>
+          </div>
+        </section>
+
+        <hr class="hide-mobile" />
+
+        <section>
+          <div class="preparation">
+            <h2>Zubereitung</h2>
+            <p>
+              <b>1.</b> Zwiebel und Knoblauch abziehen, Zwiebel in Würfel schneiden und Knoblauch zerdrücken. Beides mit Spinat in erhitztem Öl
+              andünsten.
+            </p>
+            <p><b>2.</b> Kirschtomaten waschen, halbieren, mit den Spätzle zufügen und kurz miterhitzen.</p>
+            <p>
+              <b>3.</b> Milch erhitzen, Blauschimmelkäse zugeben und unterrühren bis dieser geschmolzen ist. Mit Salz und Muskat abschmecken und mit
+              Soßenbinder andicken.
+            </p>
+            <p>
+              <b>4.</b> Die Spinat-Spätzlemischung in eine Auflaufform geben, Sauce darüber gießen, mit Bergkäse bestreuen und im vorgeheizten
+              Backofen bei 200° C (Gas: Stufe 4, Umluft 180° C) ca. 15-20 Minuten gratinieren.
+            </p>
+            <p><b>5.</b>Für den Salat Gurke schälen, der Länge nach halbieren, die Kerne entfernen und die Gurke in Scheiben schneiden.</p>
+            <p><b>6.</b>Radieschen vom Grün schneiden, waschen, putzen und ebenfalls in Scheiben schneiden.</p>
+            <p>
+              <b>7.</b>In einer Schüssel Zitronensaft, Öl, Gemüsebrühe und Schnittlauch verrühren und mit Salz und Pfeffer abschmecken. Gurken und
+              Radieschen zugeben, vermischen und mit dem Gratin servieren.
+            </p>
+
+            <p>Kleiner Tipp:Nach Wunsch mit frischem Kerbel garnieren.</p>
+            <p><b>Guten Appetit!</b></p>
+          </div>
+        </section>
+
+        <hr />
+
+        <section id="nutrition-section" class="flexbox">
+          <div class="nutrition">
+            <h3>Nährwerte für</h3>
+            <div class="nutrition-input-button">
+              <form onsubmit="return false">
+                <input id="nutrition-input" onClick="this.select();" type="number" min="1" max="10" value="1" step="1" required /><button
+                  onclick="calculateNutritionList()"
+                  class="btn"
+                >
+                  Portion(en)
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="nutrition-content">
+            <ul class="nutrition-table" id="nutrition-table"></ul>
+          </div>
+        </section>
+
+        <hr />
+
+        <section>
+          <div class="created-by">
+            <h3>Rezept erstellt von</h3>
+            <div class="created-by-picture-text">
+              <img src="img/created-by-picture.jpg" alt="Erstellter Bild" />
+              <p>Jörg Bechtold</p>
+            </div>
+            <div class="arrowIcon">
+              <a href="#top"> <img src="img/icons/arrow-green.png" /></a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div onclick="showPortionsList()" id="clipboard-list" class="clipboard-mobile-view show-mobile">
+            <span>Zutatenliste</span>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <section>
+        <div w3-include-html="templates/footer.html"></div>
+      </section>
+    </div>
+  </body>
+</html>

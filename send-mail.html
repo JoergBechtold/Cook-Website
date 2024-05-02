@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail wurde Gesendet</title>
+
+    <script src="script/templates.js"></script>
+    <script src="script/script-header.js"></script>
+
+    <link rel="icon" href="img/icons/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/style-send-mail.css" />
+    <link rel="stylesheet" href="style/style-index.css" />
+    <link rel="stylesheet" href="style/style-header.css" />
+    <link rel="stylesheet" href="style/style-footer.css" />
+  </head>
+  <body onload="includeHTML()">
+    <div class="layout">
+      <!-- Header -->
+      <section>
+        <div w3-include-html="templates/header.html"></div>
+      </section>
+
+      <main class="main-container"></main>
+
+      <!-- Footer -->
+      <section>
+        <div w3-include-html="templates/footer.html"></div>
+      </section>
+    </div>
+  </body>
+</html>

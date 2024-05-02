@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rezept des Tages</title>
+
+    <script src="script/templates.js"></script>
+    <script src="script/script-recipe-of-the-day.js"></script>
+    <script src="script/script-header.js"></script>
+
+    <link rel="icon" href="img/icons/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/style-recipe-of-the-day.css" />
+    <link rel="stylesheet" href="style/style-index.css" />
+    <link rel="stylesheet" href="style/style-header.css" />
+    <link rel="stylesheet" href="style/style-footer.css" />
+  </head>
+
+  <body id="body" onload="includeHTML(); calculateAmountList(); calculateNutritionList()">
+    <div class="layout">
+      <!-- Header -->
+      <section>
+        <div w3-include-html="templates/header.html"></div>
+      </section>
+
+      <main id="main-top" class="main-container margin-right margin-left">
+        <section class="head-section-recipe">
+          <h1>Chilli con Carne</h1>
+          <img src="img/chili-con-carne.jpg" class="picture-size-recept" alt="Chilli con Carne" />
+
+          <div class="icon-bar1">
+            <div>
+              <a href=""
+                ><button onclick="printBtn()" class="icon-btn btn-print"><img src="img/icons/print.png" /></button
+              ></a>
+            </div>
+
+            <!-- Button zum Teilen-Vorlage -->
+            <!-- <div>
+              <a href="#"
+                ><button class="icon-btn"><img src="img/icons/share-social-interface-button_icon-icons.com_73164.png" /></button
+              ></a>
+            </div> -->
+
+            <div>
+              <a href="#nutrition-section"
+                ><button class="icon-btn"><img src="img/icons/kcal-icon-17.jpg" /></button
+              ></a>
+            </div>
+          </div>
+
+          <div class="time-difficulty-date-content">
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/clock-regular.svg" alt="icon-uhr" />
+              <span>2Std 45Min.</span>
+            </div>
+
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/brain-solid.svg" alt="Schwierigkeit" />
+              <span>Leicht</span>
+            </div>
+
+            <div class="time-difficulty-date-content-child">
+              <img src="img/icons/calendar-alt-regular.svg" alt="Datum" />
+              <span>19.02.2024</span>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <section id="portions-list" class="portions-list-mobile-view hide-mobile">
+          <div class="portions-calculater">
+            <h3>Zutaten für</h3>
+            <form onsubmit="return false">
+              <!-- <label for="input">Zutaten für</label> -->
+              <input id="input" type="number" onClick="this.select();" min="1" max="10" value="3" required step="1" /><button
+                onclick="calculateAmountList()"
+                class="btn"
+              >
+                Portion(en)
+              </button>
+            </form>
+            <div onclick="CloseBtnPortionsList()" class="close-btn show-mobile">
+              <span class="close-bar"></span>
+              <span class="close-bar"></span>
+            </div>
+          </div>
+
+          <div class="amount-list">
+            <ul id="output"></ul>
+          </div>
+        </section>
+
+        <hr class="hide-mobile" />
+
+        <section>
+          <div class="preparation">
+            <h2>Zubereitung</h2>
+            <p>
+              <b>1.</b> Rapsöl in einen breiten Topf geben sobald dieser heiß ist. Anschließend das Rinderhackfleisch in kleinen Portionen hinzufügen.
+              Das Hackfleisch vorsichtig anbraten, aber nicht zu viel rühren ,damit das Fleisch seine leckeren Röstaromen entwickeln kann.
+            </p>
+            <p><b>2.</b> Zwiebeln und Knoblauchzehen fein würfeln und in einen Topf geben.Das Tomatenmark mit anrösten.</p>
+            <p><b>3.</b> Mit Salz, Pfeffer, Kreuzkümmel und Zimt würzen.</p>
+            <p><b>4.</b> Alles mit Gemüse- oder Rinderbrühe ablöschen, gerade so, dass der Boden Bedekt ist.</p>
+            <p><b>5.</b> Die stückigen Tomaten aus der Dose hinzugeben.</p>
+            <p>
+              <b>6.</b> Die Habanero-Chili vom Kerngehäuse trennen und fein würfeln.Die Chili-Schote in feine Ringe schneiden und beides in den Topf
+              geben.Jetzt alles für 2 Stunden köcheln lassen.
+            </p>
+            <p>
+              <b>7.</b> Die Paprikaschote würfeln und den Mais und die Kidney-Bohnen abspülen.Das Gemüse anschließend zu den anderen Zutaten in den
+              Topf geben und für 20 Minuten kochen.
+            </p>
+            <p><b>8.</b> Ein Stück Zartbitter-Schokolade raspeln und ebenfalls in den Topf geben.</p>
+            <p>Kleiner Tipp: Am besten schmekt das Chili aufgewärmt am nächsten Tag.</p>
+            <p><b>Guten Appetit!</b></p>
+          </div>
+        </section>
+
+        <hr />
+
+        <section id="nutrition-section" class="flexbox">
+          <div class="nutrition">
+            <h3>Nährwerte für</h3>
+            <div class="nutrition-input-button">
+              <form onsubmit="return false">
+                <input id="nutrition-input" onClick="this.select();" type="number" min="1" max="10" value="1" step="1" required /><button
+                  onclick="calculateNutritionList()"
+                  class="btn"
+                >
+                  Portion(en)
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="nutrition-content">
+            <ul class="nutrition-table" id="nutrition-table"></ul>
+          </div>
+        </section>
+
+        <hr />
+
+        <section>
+          <div class="created-by">
+            <h3>Rezept erstellt von</h3>
+            <div class="created-by-picture-text">
+              <img src="img/created-by-picture.jpg" alt="Erstellter Bild" />
+              <p>Jörg Bechtold</p>
+            </div>
+            <div class="arrowIcon">
+              <a href="#top"> <img src="img/icons/arrow-green.png" /></a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div onclick="showPortionsList()" id="clipboard-list" class="clipboard-mobile-view show-mobile">
+            <span>Zutatenliste</span>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <section>
+        <div w3-include-html="templates/footer.html"></div>
+      </section>
+    </div>
+  </body>
+</html>

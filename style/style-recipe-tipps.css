@@ -1,0 +1,42 @@
+.recipe-tipp-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.recipe-tipps-content h2 {
+  margin-top: 0px;
+  font-size: 26px;
+}
+
+.recipe-tipps-content p {
+  font-size: 20px;
+}
+
+.recipe-tipps-content span {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.recipe-tipp-section img {
+  width: 260px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .recipe-tipp-section {
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .recipe-tipps-content h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .recipe-tipp-section img {
+    width: 235px;
+  }
+}

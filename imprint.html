@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum</title>
+
+    <link rel="icon" href="img/icons/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/style-imprint.css" />
+    <link rel="stylesheet" href="style/style-index.css" />
+    <link rel="stylesheet" href="style/style-header.css" />
+    <link rel="stylesheet" href="style/style-footer.css" />
+
+    <script src="script/script-header.js"></script>
+    <script src="script/templates.js"></script>
+  </head>
+  <body onload="includeHTML()">
+    <div class="layout">
+      <!-- Header -->
+      <section>
+        <div w3-include-html="templates/header.html"></div>
+      </section>
+
+      <div class="impressum margin-right margin-left">
+        <h1>Impressum</h1>
+        <p>Angaben gemäß § 5 TMG</p>
+        <p>
+          Jörg Bechtold <br />
+          Gründauer str. 16<br />
+          63684 Gründau <br />
+        </p>
+        <p>
+          <strong>Vertreten durch: </strong><br />
+          Jörg Bechtold<br />
+        </p>
+        <p>
+          <strong>Kontakt:</strong> <br />
+          Telefon: <br /><a href="tel:+49 (0) 152-54274634"> 0152-54274634</a><br />
+          E-Mail: <br />
+          <a href="mailto:joergbechtold@gmx.net">joergbechtold@gmx.net</a>
+        </p>
+        <p>
+          <strong>Haftungsausschluss: </strong><br /><br /><strong>Haftung für Links</strong><br /><br />
+          Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
+          Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+          verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren
+          zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
+          Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+        </p>
+        <br />
+        Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der
+        <a href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und Familienrecht</a>
+      </div>
+
+      <!-- Footer -->
+      <section>
+        <div w3-include-html="templates/footer.html"></div>
+      </section>
+    </div>
+  </body>
+</html>
